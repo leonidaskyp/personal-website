@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     /**
      * Text Animation
      */
-
     const textSplit = new SplitText(".text--split", {
         type: "words, lines",
         mask: "lines"
@@ -90,6 +89,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             yPercent: 100,
             duration: 1.5,
             ease: "power4",
+            immediateRender: false,
             scrollTrigger: {
                 trigger: line,
                 toggleActions: "play none none none",
@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
+
 
     /**
      * Scroll Up Button
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
     /**
-     * 
+     * Window Scroll - Navbar
      */
     let navbar = document.getElementById("navbar");
     let windowScroll = this.scrollY;
