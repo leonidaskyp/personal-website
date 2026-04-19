@@ -171,7 +171,7 @@ a:target {
     position: relative;
 }
 .text--split {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .reveal {
