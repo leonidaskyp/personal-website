@@ -171,7 +171,7 @@ a:target {
     position: relative;
 }
 .text--split {
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .reveal {
@@ -312,11 +312,16 @@ footer {
             list-style-type: none;
             & li {
                 display: inherit;
-                & a, & span {
+                & a {
                     font-size: 16px;
                     text-transform: uppercase;
                     font-weight: 700;
                     color: var(--black);
+                    opacity: 1;
+                    transition: 0.3s ease-in-out;
+                    &:hover {
+                        opacity: 0.6;
+                    }
                 }
             }
         }
@@ -333,13 +338,11 @@ footer {
         & > :first-child {
             max-width: 55vw!important;
         }
-        & > :last-child {
-            max-width: 22vw;
+        & > :nth-child(2) {
+            max-width: 26vw!important;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            row-gap: 32px;
-            column-gap: 20px;
+            justify-content: end;
             & > a {
                 aspect-ratio: 4 / 3;
                 border-radius: 8px;
@@ -371,7 +374,7 @@ footer {
             line-height: 1;
         }
         & p {
-            font-size: clamp(1rem, 0.9712rem + 0.1282vw, 1.125rem);
+            font-size: clamp(1rem, 0.8846rem + 0.5128vw, 1.5rem);
             text-align: end;
             margin-bottom: 20px;
         }
@@ -382,6 +385,7 @@ footer {
 .media-section {
     & .media-container {
         height: 100vh;
+        max-height: 1080px;
     }
     & img, & video {
         height: 100%;
@@ -512,9 +516,8 @@ footer {
             & > :first-child {
                 max-width: 100vw!important;
             }
-            & > :last-child {
+            & > :nth-child(2) {
                 max-width: 100vw!important;
-                flex-direction: column-reverse;
             }
             & p {
                 text-align: start;
